@@ -5,7 +5,6 @@ let G = 6.674;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    text('Hello World!', width/2, height/2);
     
     colorMode(HSB);
     
@@ -19,7 +18,7 @@ function setup() {
         this.ax = 0;
         this.ay = 0;
         
-        this.c = colour || color(random(360),1,1);
+        this.c = colour || color(random(360), 100, 100);
     };
     Body.prototype.draw = function() {
         fill(this.c);
