@@ -5,9 +5,11 @@ let massDistRatio = Math.pow(10, 20);
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    console.log(width, height);    
     
     noStroke();
     colorMode(HSB);
+    textAlign(CENTER, CENTER);
     
     Body = function(mass, x, y, vx, vy, colour) {
         this.m = mass;
@@ -23,7 +25,10 @@ function setup() {
     };
     Body.prototype.draw = function() {
         fill(this.c);
-        circle(this.x, this.y, this.m / pow(10,30));
+        //circle(this.x, this.y, this.m / pow(10,30));
+        circle(this.x, this.y, 100);
+        fill(0);
+        text(this.m, this.x, this.y);
     };
     Body.prototype.update = function(bodies) {
         for (body of bodies) {
