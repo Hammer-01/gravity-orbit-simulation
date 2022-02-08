@@ -50,5 +50,6 @@ function draw() {
     background(255);
     for (body of bodies) {
         body.update(bodies);
+        console.log(`x: ${body.x}, y: ${body.y}`);
     }
 }
