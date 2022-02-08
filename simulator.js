@@ -43,7 +43,7 @@ function setup() {
         this.draw();
     };
     
-    bodies.push(new Body(100), new Body(75, 100, 100);
+    bodies.push(new Body(100), new Body(75, 100, 100));
 }
 
 function draw() {
