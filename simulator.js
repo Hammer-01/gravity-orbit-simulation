@@ -6,6 +6,7 @@ let G = 6.674;
 function setup() {
     createCanvas(windowWidth, windowHeight);
     
+    noStroke();
     colorMode(HSB);
     
     Body = function(mass, x, y, vx, vy, colour) {
