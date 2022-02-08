@@ -29,7 +29,7 @@ function setup() {
         for (body of bodies) {
             if (body !== this) {
                 // F = G * M * m / r^2
-                let force = G * this.m * body.m / sq(dist(this.x, this.y, body.x, body.y));
+                let force = -G * this.m * body.m / sq(dist(this.x, this.y, body.x, body.y));
                 let angle = atan2(body.y - this.y, body.x - this.x);
                 // Update acc, vel, pos
                 this.ax += force * cos(angle);
@@ -43,7 +43,7 @@ function setup() {
         this.draw();
     };
     
-    bodies.push(new Body(100));
+    bodies.push(new Body(100), new Body(75, 100, 100);
 }
 
 function draw() {
