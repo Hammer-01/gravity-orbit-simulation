@@ -1,7 +1,7 @@
 let Body;
 let bodies = [];
-let massSizeRatio = 1;
 let G = 6.674;
+let massDistRatio = pow(10, 20);
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -23,13 +23,13 @@ function setup() {
     };
     Body.prototype.draw = function() {
         fill(this.c);
-        circle(this.x, this.y, this.m * massSizeRatio);
+        circle(this.x, this.y, this.m / pow(10,30));
     };
     Body.prototype.update = function(bodies) {
         for (body of bodies) {
             if (body !== this) {
                 // F = G * M * m / r^2
-                let force = G * this.m * body.m / sq(dist(this.x, this.y, body.x, body.y)) * 4;
+                let force = G * this.m * body.m / sq(dist(this.x, this.y, body.x, body.y) / massDistRatio);
                 let angle = atan2(body.y - this.y, body.x - this.x);
                 // Update acc, vel, pos
                 this.ax += force * cos(angle);
@@ -43,7 +43,7 @@ function setup() {
         this.draw();
     };
     
-    bodies.push(new Body(100), new Body(75, 100, 100));
+    bodies.push(new Body(2*pow(10,30)), new Body(6*pow(10,24), 100, 100));
 }
 
 function draw() {
