@@ -1,7 +1,7 @@
 let Body;
 let bodies = [];
 let G = 6.674;
-let massDistRatio = pow(10, 20);
+let massDistRatio = Math.pow(10, 20);
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
