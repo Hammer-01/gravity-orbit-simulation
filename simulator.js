@@ -47,6 +47,7 @@ function setup() {
 }
 
 function draw() {
+    background(255);
     for (body of bodies) {
         body.update(bodies);
     }
